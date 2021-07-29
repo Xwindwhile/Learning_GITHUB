@@ -81,6 +81,11 @@
   - 传递内容
 
     - `git push origin main` 这个`main`是默认的branch，如果你想传到其他branch上，那就换成对应的branch名成即可
+    
+  - 信息查看
+
+    - `git remote`或是`git remote -v`查看当前远程仓库的信息（后者显示了可以抓取和推送的`origin`的地址）
+    - 
 
 - 分支管理
 
