@@ -95,4 +95,9 @@
   - `git switch`新的命令用于切换分支（防止与`git checkout --`+文件名，这类撤销操作混淆）
     - `git switch -c dev`，创建一个名为dev的分支并转到
     - `git swithc main`，转到main分支
-  - 这是我在machine_learning上做的操作
+  - 当你在新分支commit完后，回到main上，又对文件进行了相应操作。如果你此时执行`git merge new_branch`  将new_branch和main合并，就会出现合并冲突。这部分会同时些如文件中，但是会有`<<<<<<<`，`=======`，`>>>>>>>`标记出不同分支的内容。
+    - 此时需要解决冲突，手动将其重复的内容合并
+    - 随后add再commit
+  - 这是我在machine_learning上做的操作以及在feature1做的改变
+       
+
