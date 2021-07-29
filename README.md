@@ -117,5 +117,11 @@
     - 当与人一起合作项目时，可以前述中提到的拉取远程仓库建立链接，然后执行`git switch -c xxx`创建一个新分支，之后执行`git push origin xxx` 将新建的分支推到远程
     - 当出现冲突时，
       - 让一个人先提交，再合并，然后另一个人再**pull**那个合并的分支，在本地合并解决冲突再push
-      - 
+  
+- 创造标签
+
+  - `git tag` 可查看所有的标签，`git tag v0.9 commit_id` 指的是给特定的commit_id赋予标签（可用`git log` 查看以往提交的命令
+  - `git tag -a v1.0 -m "version 1.0 released" commit_id` 是更详细的操作用`-a`指定标签名，`-m`指定说明文字。
+  - `git tag -d` + 标签名，即可实现标签的删除
+  - 
 
