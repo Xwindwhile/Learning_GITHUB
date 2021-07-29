@@ -100,5 +100,5 @@
     - 随后add再commit
   - 可以利用`git log --graph`看到分支的合并情况
   - 这是我在machine_learning上做的操作以及在feature1做的改变
--    
+- 这是我在dev上的内容
 
