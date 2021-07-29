@@ -34,7 +34,7 @@
 
   - 拉取远程仓库
 
-    - `git clone`+目标库的网址（如https://github.com/Xwindwhile/Learning_GITHUB.git，其结构是github的域名后面接用户名再是目标仓库的名称）
+    - `git clone`+目标库的网址（如https://github.com/Xwindwhile/Learning_GITHUB.git，其结构是github的域名后面接用户名再是目标仓库的名称），也可以是（git@github.com:Xwindwhile/Learning_GITHUB.git，而后者速度更快）
     - `git remote add origin`+目标库网址
     - 完了之后就会有一个对应仓库名的文件夹在你的User文件下（默认是这个），之后就可以对这个仓库进行一些操作啦（操作步骤同上面的步骤一致`git add` ->`git commit -m "xxx"`）
 
@@ -57,7 +57,7 @@
       - 第一次修改 -> `git add` -> 第二次修改 -> `git add` -> `git commit`，**所有的修改均被提交**
   - 撤销修改
     - 未执行`git add`时
-      - `git checkout -- `+文件名，丢弃工作区的修改（注意此时的丢弃修改的内容无法找回）。其起到的作用是一键还原
+      - `git checkout -- `+文件名（注意**--**不能漏掉），丢弃工作区的修改（注意此时的丢弃修改的内容无法找回）。其起到的作用是一键还原
     - 未执行`git commit`时
       - `git reset HEAD` + 文件名，即`git reset`即可以回退版本，又可以把暂存区的修改回退到工作区。用`HEAD`来表示最新的版本（没有加`^`）
     - 已执行`git commit`，但未提交到远端时
@@ -80,4 +80,11 @@
 
   - 传递内容
 
+    - `git push origin main` 这个`main`是默认的branch，如果你想传到其他branch上，那就换成对应的branch名成即可
+
+- 分支管理
+
+  - `git checkout -b` +名称，表示创建一个新分支并切换到该分支上
+    - `git checkout` + 名称，是指转到该分支
     - 
+
