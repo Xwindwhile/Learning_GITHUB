@@ -8,6 +8,7 @@
   - 进入某一目录：`cd git` (进入 git 目录)
   - 显示当前路径：`pwd`
   - 创建文件：`mkdir `+ 文件名
+
 - Git的运行逻辑（仓库创建和远程拉取）
 
   - 创建仓库（`git init`）这样就在将当前文件夹变为一个git管理的仓库（最好是空文件夹，创建完后可发现一个.git的文件）
@@ -26,12 +27,17 @@
         - How many insertions are done
         - How many deletions are done
         - So on……
+      - 如果在输入命令是没有加上`-m"xxx"`往往会出现提示信息，此时有以下几种做法
+        - 按`i`出现insert，然后输入你要的信息
+        - 再按左上角的`Esc`退出插入模式
+        - 输入`:wq`再回车即可成功commit（当然如果你commit错了也可以直接输入这个然后退出，信息不会被提交）
 
   - 拉取远程仓库
 
     - `git clone`+目标库的网址（如https://github.com/Xwindwhile/Learning_GITHUB.git，其结构是github的域名后面接用户名再是目标仓库的名称）
     - `git remote add origin`+目标库网址
     - 完了之后就会有一个对应仓库名的文件夹在你的User文件下（默认是这个），之后就可以对这个仓库进行一些操作啦（操作步骤同上面的步骤一致`git add` ->`git commit -m "xxx"`）
+
 - 状态查看
 
   - `git status` **随时掌握工作区的状态**命令可以让我们时刻掌握仓库当前的状态，命令输出会告诉我们哪些文件被修改了，但是未被提交commit
@@ -61,6 +67,17 @@
     - 直接在命令行中执行`rm`+文件名（或者手动删除），这样文件就在**工作区**被删除了。如果是真的要删，看1，如果删错了，看2
       - 1 执行`git rm`并且`git commit`，这样文件在版本库中也会被删除
       - 2 删除了的话，直接`git checkout --`+文件名
+  
 - 远程仓库
-  - 
 
+  - 先要有一个ssh key才能把你的内容推送到位于GITHUB的仓库中
+
+    - ```
+      $ ssh-keygen -t rsa -C "youremail@example.com"
+      ```
+
+    - 登陆GitHub，打开“Account settings”，“SSH Keys”页面，把`.ssh`文件夹中public的密匙cv进去
+
+  - 传递内容
+
+    - 
