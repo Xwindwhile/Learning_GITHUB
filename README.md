@@ -96,9 +96,17 @@
     - `git switch -c dev`，创建一个名为dev的分支并转到
     - `git swithc main`，转到main分支
   - 当你在新分支commit完后，回到main上，又对文件进行了相应操作。如果你此时执行`git merge new_branch`  将new_branch和main合并，就会出现合并冲突。这部分会同时些如文件中，但是会有`<<<<<<<`，`=======`，`>>>>>>>`标记出不同分支的内容。
-  - 此时需要解决冲突，手动将其重复的内容合并
+    - 此时需要解决冲突，手动将其重复的内容合并
     - 随后add再commit
-  - 可以利用`git log --graph`看到分支的合并情况
-  - 这是我在machine_learning上做的操作以及在feature1做的改变
-- 这是我在dev上的内容
+    - 可以利用`git log --graph`看到分支的合并情况
+  - 默认情况下，git使用的是fast forward方式合并。如果要强制禁用`Fast forward`模式，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息
+    - `git merge --no-ff -m"xxx"`+分支名称
+    - 这样就可以得到一个新的内容提交
+  - 同时，如果你更改了某一个分支的文件但没有commit，系统就不会允许你执行`git switch`操作（就是换分支），此时解决方法如下：
+    - `git stash`把当前工作现场“储藏”起来
+    - `git stash list` 查看存储的工作区
+    - 当从其他分支转回到该分支时，需要执行`git stash apply`或`git stash pop`来恢复（前者恢复后并不删除stash中的内容，需要手动`git stash drop`来删除，而后者会删除
+    - 在main分支上修复的bug，想要合并到当前dev分支，可以用`git cherry-pick <commit>`命令（其中`commit`指的是版本号），把bug提交的修改“复制”到当前分支，避免重复劳动。
+  - `git branch -D`+名称，来删除一个没有被合并过的分支（信息会直接被删除掉）
+  - 
 
